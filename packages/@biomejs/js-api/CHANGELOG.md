@@ -1,5 +1,31 @@
 # @biomejs/js-api
 
+## 6.1.0
+
+### Minor Changes
+
+- [#9940](https://github.com/biomejs/biome/pull/9940) [`1aefcb1`](https://github.com/biomejs/biome/commit/1aefcb186f47df33685aeb2fdd249cd90bdf1892) Thanks [@regseb](https://github.com/regseb)! - Added `spanInBytesToSpanInCodeUnits` helper function in subpath exports of `@biomejs/js-api`.
+  
+  ```js
+  import { spanInBytesToSpanInCodeUnits } from "@biomejs/js-api/nodejs";
+  // Or:
+  // import { spanInBytesToSpanInCodeUnits } from "@biomejs/js-api/bundler";
+  // import { spanInBytesToSpanInCodeUnits } from "@biomejs/js-api/web";
+  
+  const [start, end] = spanInBytesToSpanInCodeUnits(
+      diagnostic.location.span,
+      content
+  );
+  const text = content.slice(start, end); // Correctly extracts the text
+  ```
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @biomejs/wasm-bundler@2.6.0
+  - @biomejs/wasm-nodejs@2.6.0
+  - @biomejs/wasm-web@2.6.0
+
 ## 6.0.0
 
 ### Minor Changes
